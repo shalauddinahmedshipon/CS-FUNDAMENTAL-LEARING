@@ -1,12 +1,9 @@
 #include <stdio.h>
 
-int min(){
-   int ,B;
-   scnf("%d %d",&,&b);
-   if(b % ==0 ){
-    printf("Multiples");
-   }
-   else if( %b==0){
+int main(){
+   int a,b;
+   scanf("%d %d",&a,&b);
+   if(b %a==0 || a%b==0){
     printf("Multiples");
    }
    else{
