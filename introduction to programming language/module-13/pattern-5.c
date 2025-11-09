@@ -17,5 +17,5 @@ printf("\n");
 star++;
 // space--;
 }
-    return 0;
+    // return 0;
 }
