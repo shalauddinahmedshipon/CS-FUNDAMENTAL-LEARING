@@ -46,56 +46,34 @@ void print_forward(Node* head){
     cout<<endl;
 }
 
+void print_backward(Node* tail){
+    Node* tmp = tail;
+    while (tmp!=NULL)
+    {
+        cout<<tmp->val<<" ";
+        tmp=tmp->prev;
+    }
+    cout<<endl; 
+}
+
 int main(){
 
-    Node* head1 =NULL;
-    Node* head2 =NULL;
-    Node* tail1 =NULL;
-    Node* tail2 =NULL;
-    int val1,val2;
+    Node* head =NULL;
+    Node* tail =NULL;
+    
+    int val;
 
     while (true)
     {
-       cin>>val1;
-       if(val1==-1){
+       cin>>val;
+       if(val==-1){
         break;
        }
-       insert_at_tail(head1,tail1,val1);
+       insert_at_tail(head,tail,val);
     }
 
-   
-    while (true)
-    {
-       cin>>val2;
-       if(val2==-1){
-        break;
-       }
-       insert_at_tail(head2,tail2,val2);
-    }
+   print_backward(tail);
 
-
- if(size_of_list(head1)!=size_of_list(head2)){
-    cout<<"NO"<<endl;
-    return 0;
- }
-
-bool isEqual=true;
-Node* tmp= head2;
-for (Node* i = head1;i!=NULL; i=i->next)
-{
-    if(i->val!=tmp->val){
-        isEqual=false;
-        break;
-    }
-
-    tmp=tmp->next;           
-}
-
-if(isEqual){
-    cout<<"YES"<<endl;
-}else{
-    cout<<"NO"<<endl;
-}
 
     return 0;
 }
