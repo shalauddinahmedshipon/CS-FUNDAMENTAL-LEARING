@@ -70,16 +70,24 @@ void print_backward(Node* tail){
     cout<<endl; 
 }
 
-void reverse_ls(Node*){
-
+void sort_ll(Node* head){
+    for (Node* i = head; i->next!=NULL; i=i->next)
+    {
+     for (Node* j = i->next; j!=NULL;j=j->next)
+     {
+       if(i->val>j->val){
+        swap(i->val,j->val);
+       }
+     }
+     
+    }
+    
 }
-
 int main(){
 
-    Node* head1 =NULL;
-    Node* tail1 =NULL;
-    Node* head2 =NULL;
-    Node* tail2 =NULL;
+    Node* head =NULL;
+    Node* tail =NULL;
+   
     
     int val;
 
@@ -89,27 +97,13 @@ int main(){
        if(val==-1){
         break;
        }
-       insert_at_tail(head1,tail1,val);
-       insert_at_head(head2,tail2,val);
+       insert_at_tail(head,tail,val);
+      
     }
+      sort_ll(head);
+     print_forward(head);
 
-
-    bool isPalindrome=true;
-    Node* tmp=head2;
-    for (Node* i = head1; i!=NULL; i=i->next)
-    {
-       if(i->val!=tmp->val){
-        isPalindrome=false;
-        break;
-       }
-       tmp=tmp->next; 
-    }
-    
-    if(isPalindrome){
-        cout<<"YES"<<endl;
-    }else{
-        cout<<"NO"<<endl;
-    }
+  
 
 
     return 0;
