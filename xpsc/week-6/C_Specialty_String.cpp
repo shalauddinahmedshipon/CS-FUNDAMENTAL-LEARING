@@ -8,13 +8,20 @@ int main(){
     {
         int n;
         cin>>n;
-        string s;
-        cin>>s;
-        int l=0,r=0;
-        while (r<n)
+        stack<char> s;
+        for (int i = 0; i < n; i++)
         {
-            /* code */
+            char ch;
+            cin>>ch;
+            if(s.empty()||s.top()!=ch){
+                s.push(ch);
+            }else{
+                s.pop();
+            }
         }
+        
+       if(s.empty()) cout<<"YES"<<endl;
+       else cout<<"NO"<<endl;
         
     }
     
