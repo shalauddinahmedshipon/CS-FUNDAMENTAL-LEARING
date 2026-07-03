@@ -14,33 +14,15 @@ int main(){
 
         sort(v.begin(),v.end());
 
-        ll mn=v[0],mx=v[n-1],cnt=0;
+        int cnt=0;
 
-        while (mx>mn)
+        while (v[0]!=v[n-1])
         {
-            mx=mx/2;
-            cnt++;
-            if(mx<=mn){
-                break;
-            }
+             v[n-1]=v[n-1]/2;
+             cnt++;
+             sort(v.begin(),v.end());
         }
-
-        if(mn>mx){
-            mn=mn/2;
-            cnt++;
-        }
-         
-        for (int i = 1; i < n-1; i++)
-        {
-            if(v[i]!=mn){
-                while(v[i]>mn){
-                    v[i]=v[i]/2;
-                     cnt++;
-                    if(v[i]==mn) break;
-                   
-                }
-            }
-        }
+        
         
         cout<<cnt<<endl;
         
