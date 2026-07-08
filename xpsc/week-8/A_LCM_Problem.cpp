@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>;
+using namespace std;
+#define ll long long
+
+
+
+int main(){
+    int t; cin>>t;
+    while (t--)
+    {
+        ll l,r; cin>>l>>r;
+
+      
+
+        
+        if(2*l<=r) cout<<l<<" "<<2*l;
+        else cout<<-1<<" "<<-1;
+
+        cout<<endl;
+        
+
+    }
+    
+    return 0;
+}
