@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>;
+using namespace std;
+
+int main(){
+    int t; cin>>t;
+    while (t--)
+    {
+        float n,m,x; cin>>n>>m>>x;
+        
+        float r=ceil(x/m);
+        float s=(n-r);
+        
+        int res=min(r,s+1);
+        cout<<res<<endl;
+
+        
+
+       
+    }
+    
+    return 0;
+}
